@@ -43,7 +43,6 @@ function drawHeart(x, y, size, color, opacity, rotation) {
 function animateHearts() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // Adiciona novos corações
   if (hearts.length < 30 && Math.random() < 0.5) {
     hearts.push(randomHeart());
   }
@@ -56,7 +55,6 @@ function animateHearts() {
     drawHeart(h.x, h.y, h.size, "#ff69b4", h.opacity, h.rotation);
   }
 
-  // Remove corações que saíram da tela
   hearts = hearts.filter(h => h.y < canvas.height + h.size);
 
   requestAnimationFrame(animateHearts);

@@ -63,9 +63,7 @@ body {
   border: 1px solid #35354d;
 }
 
-/* ...existing code... */
 
-/* ...existing code... */
 
 .carousel {
   position: relative;
@@ -211,7 +209,6 @@ body {
   }
 }
 
-/* ...existing code... */
 
 #hearts-bg {
   position: fixed;
@@ -224,12 +221,7 @@ body {
   opacity: 0.35;
 }
 
-/* .container { z-index: 1; position: relative; }  (já está no seu CSS ou pode adicionar para garantir) */
 
-/* ...existing code... */
-
-
-/* ...existing code... */
 .poem-box {
   background: rgba(40,41,62,0.85);
   border-radius: 16px;

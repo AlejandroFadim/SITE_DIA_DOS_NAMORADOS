@@ -49,7 +49,6 @@ function updateLoveTimer() {
   const minutes = Math.floor(diff / 60);
   const seconds = diff - minutes * 60;
 
-  // Atualiza os spans do poema
   if (document.getElementById('poem-days')) {
     document.getElementById('poem-days').textContent = days;
     document.getElementById('poem-hours').textContent = String(hours).padStart(2, '0');
