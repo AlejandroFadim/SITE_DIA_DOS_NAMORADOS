@@ -1,0 +1,280 @@
+:root {
+  --primary: #ff69b4;
+  --background: #181824;
+  --surface: #232336;
+  --text: #f5f5fa;
+  --secondary: #28293e;
+  --accent: #ffb6e6;
+  --border: #35354d;
+  --shadow: 0 4px 24px #0005;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+}
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 18px 0 12px 0;
+  color: #ffb6e6;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  background: transparent;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  z-index: 2;
+}
+
+.container {
+  max-width: 420px;
+  margin: 40px auto 32px auto;
+  padding: 28px 12px 32px 12px;
+  background: linear-gradient(135deg, #232336 80%, #2d2d44 100%);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px #0006, 0 1.5px 0 #ff69b4 inset;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border: 1.5px solid var(--border);
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1.2s cubic-bezier(.4,0,.2,1);
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: none;}
+}
+
+.spotify-player {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgba(40,41,62,0.7);
+  border-radius: 16px;
+  padding: 14px 0 10px 0;
+  box-shadow: 0 2px 12px #0002;
+  backdrop-filter: blur(4px);
+  border: 1px solid #35354d;
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(120deg, #28293e 80%, #35354d 100%);
+  border-radius: 18px;
+  box-shadow: 0 6px 24px #0005;
+  min-height: 320px;
+  border: 1.5px solid #35354d;
+}
+.carousel-img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 4px 16px #0004;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.carousel-img.active {
+  display: block;
+  opacity: 1;
+  z-index: 1;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #ff69b4 60%, #ffb6e6 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 26px;
+  cursor: pointer;
+  opacity: 0.92;
+  z-index: 2;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 12px #0004;
+  border: 2px solid #fff2;
+}
+.carousel-btn:hover {
+  background: linear-gradient(135deg, #ffb6e6 60%, #ff69b4 100%);
+  transform: scale(1.08) translateY(-50%);
+}
+.carousel-btn.prev { left: 12px; }
+.carousel-btn.next { right: 12px; }
+
+.love-timer {
+  background: linear-gradient(90deg, #232336 60%, #2d2d44 100%);
+  border-radius: 14px;
+  padding: 20px 10px 16px 10px;
+  text-align: center;
+  box-shadow: 0 2px 12px #0002;
+  margin-top: 8px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.love-timer h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: var(--primary);
+  font-weight: 600;
+}
+.timer-values {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 8px;
+}
+.timer-values div {
+  background: var(--background);
+  border-radius: 10px;
+  padding: 10px 8px 6px 8px;
+  min-width: 56px;
+  box-shadow: 0 1px 4px #0002;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.timer-values span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 2px;
+}
+.timer-values label {
+  font-size: 0.8rem;
+  color: #bdbdd7;
+  letter-spacing: 1px;
+}
+.love-detail {
+  font-size: 0.9rem;
+  color: #bdbdd7;
+  margin-top: 6px;
+  letter-spacing: 1px;
+}
+
+.text-field textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 14px;
+  font-size: 1rem;
+  resize: none;
+  background: var(--secondary);
+  color: var(--text);
+  box-shadow: 0 1px 4px #0002;
+  transition: border 0.2s;
+}
+.text-field textarea:focus {
+  border: 1.5px solid var(--primary);
+  outline: none;
+}
+
+@media (min-width: 600px) {
+  .container {
+    max-width: 600px;
+    padding: 40px 32px;
+  }
+  .carousel {
+    height: 300px;
+  }
+  .carousel-img {
+    height: 280px;
+  }
+  .love-timer {
+    padding: 28px 20px 20px 20px;
+  }
+}
+
+/* ...existing code... */
+
+#hearts-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* .container { z-index: 1; position: relative; }  (já está no seu CSS ou pode adicionar para garantir) */
+
+/* ...existing code... */
+
+
+/* ...existing code... */
+.poem-box {
+  background: rgba(40,41,62,0.85);
+  border-radius: 16px;
+  padding: 28px 18px 22px 18px;
+  margin-top: 10px;
+  box-shadow: 0 2px 16px #0003;
+  color: var(--accent);
+  font-size: 1.18rem;
+  text-align: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.8;
+  border: 1.5px solid var(--border);
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+}
+.poem-box:before {
+  content: "❤";
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  font-size: 1.5rem;
+  color: #ff69b4;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.poem-box span {
+  color: #ff69b4;
+  font-weight: bold;
+  font-size: 1.22em;
+}
+/* ...existing code... */
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px 2vw 18px 2vw;
+    gap: 18px;
+  }
+  .poem-box {
+    padding: 18px 4vw 14px 4vw;
+    font-size: 1.04rem;
+  }
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+}
